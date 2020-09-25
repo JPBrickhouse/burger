@@ -32,11 +32,11 @@ License: MIT License<br>
 [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
 
 ## CONTRIBUTING
-[https://github.com/Username](https://github.com/JPBrickhouse)
+[https://github.com/JPBrickhouse](https://github.com/JPBrickhouse)
 
 ## TESTS
 PLACEHOLDER
 
 ## QUESTIONS
 - Feel free to visit the following GitHub for more information:
-[https://github.com/Username](https://github.com/JPBrickhouse)
+[https://github.com/JPBrickhouse](https://github.com/JPBrickhouse)
