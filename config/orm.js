@@ -12,17 +12,13 @@ var connection = require("../config/connection.js");
 
 
 
-
+// Object for all the SQL statement functions
 var orm = {
-
-
-
 
 
     selectAll: function () {
 
     },
-
 
 
 
@@ -35,7 +31,6 @@ var orm = {
     updateOne: function () {
 
     }
-
 
 }
 
