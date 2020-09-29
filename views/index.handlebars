@@ -17,7 +17,12 @@
                 <ul class="list-group list-group-flush">
                     {{#each burgers}}
                     {{#unless devoured}}
+
                     <li class="list-group-item">{{burger_name}}</li>
+                    {{!-- REVISE THIS --}}
+                    {{!-- REFERENCE Cat-Block for how to display the list item... --}}
+                    {{!-- And the button to swap/revise the state of burger devoured --}}
+
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -31,7 +36,13 @@
                 <ul class="list-group list-group-flush">
                     {{#each burgers}}
                     {{#if devoured}}
+
                     <li class="list-group-item">{{burger_name}}</li>
+                    {{!-- REVISE THIS --}}
+                    {{!-- REFERENCE Cat-Block for how to display the list item... --}}
+                    {{!-- And the button to swap/revise the state of burger devoured --}}
+
+
                     {{/if}}
                     {{/each}}
                 </ul>
