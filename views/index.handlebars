@@ -1,53 +1,56 @@
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Eat Da Burger</h1>
-    </div>
-</div>
 
 
-{{!-- Add the burger input form --}}
+    {{!-- Add the burger input form --}}
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-xl-6">
-            <h2 class="text-center">Uneaten Burgers</h2>
 
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                    {{#unless devoured}}
+    <div class="container jumbotron jumbotron-fluid">
 
-                    <li class="list-group-item">{{burger_name}}</li>
-                    {{!-- REVISE THIS --}}
-                    {{!-- REFERENCE Cat-Block for how to display the list item... --}}
-                    {{!-- And the button to swap/revise the state of burger devoured --}}
+        <h2 class="display-4 text-center">Eat Da Burger</h2>
 
-                    {{/unless}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <h2 class="text-center">Uneaten Burgers</h2>
 
-        <div class="col-xl-6">
-            <h2 class="text-center">Eaten Burgers</h2>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                        {{#unless devoured}}
 
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                    {{#if devoured}}
+                        <li class="list-group-item">{{burger_name}}</li>
+                        {{!-- REVISE THIS --}}
+                        {{!-- REFERENCE Cat-Block for how to display the list item... --}}
+                        {{!-- And the button to swap/revise the state of burger devoured --}}
 
-                    <li class="list-group-item">{{burger_name}}</li>
-                    {{!-- REVISE THIS --}}
-                    {{!-- REFERENCE Cat-Block for how to display the list item... --}}
-                    {{!-- And the button to swap/revise the state of burger devoured --}}
-
-
-                    {{/if}}
-                    {{/each}}
-                </ul>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
 
+            <div class="col-xl-6">
+                <h2 class="text-center">Eaten Burgers</h2>
+
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                        {{#if devoured}}
+
+                        <li class="list-group-item">{{burger_name}}</li>
+                        {{!-- REVISE THIS --}}
+                        {{!-- REFERENCE Cat-Block for how to display the list item... --}}
+                        {{!-- And the button to swap/revise the state of burger devoured --}}
+                        {{!-- When it's on the devoured side, there is also a delete button --}}
+
+
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
+
 </div>
