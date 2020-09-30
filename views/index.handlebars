@@ -1,16 +1,22 @@
 <div class="jumbotron jumbotron-fluid">
 
-
-    {{!-- Add the burger input form --}}
-
-
-
     <div class="container jumbotron jumbotron-fluid">
 
-        <h2 class="display-4 text-center">Eat Da Burger</h2>
+        <h1 class="display-4 text-center">Eat Da Burger</h1>
+
+        <form class="create-form">
+            <div class="form-group d-flex justify-content-center">
+                <label for="burg">Burger Name: </label>
+                <input type="text" id="burg" name="name" placeholder="Input Here">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-dark">Add Burger</button>
+            </div>
+        </form>
 
         <div class="row">
             <div class="col-xl-6">
+
                 <h2 class="text-center">Uneaten Burgers</h2>
 
                 <div class="card">
@@ -27,9 +33,11 @@
                         {{/each}}
                     </ul>
                 </div>
+
             </div>
 
             <div class="col-xl-6">
+
                 <h2 class="text-center">Eaten Burgers</h2>
 
                 <div class="card">
@@ -50,7 +58,7 @@
                 </div>
 
             </div>
+
         </div>
     </div>
-
 </div>
