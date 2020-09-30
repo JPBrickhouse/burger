@@ -1,3 +1,4 @@
+const { query } = require("express");
 // Import MySQL connection
 var connection = require("../config/connection.js");
 
@@ -8,13 +9,13 @@ var connection = require("../config/connection.js");
 // ["?", "?", "?"].toString() => "?,?,?";
 function printQuestionMarks(num) {
     var arr = [];
-  
+
     for (var i = 0; i < num; i++) {
-      arr.push("?");
+        arr.push("?");
     }
-  
+
     return arr.toString();
-  }
+}
 
 
 
@@ -31,7 +32,7 @@ var orm = {
     selectAll: function (tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
-            if(err) {
+            if (err) {
                 throw err;
             }
             callback(result);
@@ -40,8 +41,24 @@ var orm = {
 
 
 
-    insertOne: function () {
+    insertOne: function (tableInput, cols, vals, cb) {
+        var queryString = "INSERT INTO " + tableInput;
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
 
+        console.log(queryString);
+
+        connection.query(queryString, vals, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
     },
 
 
