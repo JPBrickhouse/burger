@@ -53,15 +53,24 @@ $(function () {
                 console.log("Changed devoured status to ", newDevouredStatus);
                 location.reload();
             }
-        )
+        );
     });
-
-
-
 
 
     // Function on click
     // DELETE BURGER from the list
     // Making an AJAX call to the API
+    $(".delete-burger").on("click",function(event){
+        var id = $(this).data("id");
+
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(
+            function() {
+                console.log("Deleted burger with the id of ",id);
+                location.reload();
+            }
+        );
+    });
 
 })

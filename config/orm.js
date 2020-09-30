@@ -97,9 +97,19 @@ var orm = {
     },
 
 
-    // delete: function (tableInput, condition, cb) {
+    delete: function (tableInput, condition, cb) {
+        var queryString = "DELETE FROM " + tableInput;
+        queryString += " WHERE ";
+        queryString += condition;
 
-    // }
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    }
 }
 
 
