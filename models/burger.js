@@ -17,11 +17,19 @@ var burger = {
     },
 
 
-    updateOne: function () {
-        orm.updateOne({
+    // updateOne: function () {
+    //     orm.updateOne({
+
+    //     });
+    // }
+
+
+    delete: function() {
+        orm.delete({
 
         });
     }
+
 }
 
 
