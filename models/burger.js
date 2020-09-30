@@ -4,27 +4,27 @@ var orm = require("../config/orm.js");
 var burger = {
 
     selectAll: function (callback) {
-        orm.selectAll("burgers",function(res) {
+        orm.selectAll("burgers", function (res) {
             callback(res);
         });
     },
 
 
-    insertOne: function (cols,vals,cb) {
-        orm.insertOne("burgers",cols,vals, function(res) {
-            cb(res);
+    insertOne: function (cols, vals, callback) {
+        orm.insertOne("burgers", cols, vals, function (res) {
+            callback(res);
         });
     },
 
 
-    // updateOne: function () {
-    //     orm.updateOne({
+    updateOne: function (objColVals, condition, callback) {
+        orm.updateOne("burgers", objColVals, condition, function (res) {
+            callback(res);
+        });
+    },
 
-    //     });
-    // }
 
-
-    delete: function() {
+    delete: function () {
         orm.delete({
 
         });
