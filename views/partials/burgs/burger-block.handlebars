@@ -1,10 +1,19 @@
+{{!-- this file, a handlebars partial, will get placed into the index.handlebars file at the specified location --}}
+{{!-- Based on the code with the index.handlebars file, this partial will get used for EACH piece of content in the handlebars object --}}
+
+{{!-- creating a list item --}}
 <li class="list-group-item">
+
+    {{!-- displaying the burger name --}}
     {{burger_name}}
 
+    {{!-- creating a button with several properties pertaining to the burger's id and devoured status --}}
     <button class="change-devoured btn btn-success" data-id="{{id}}" data-devoured="{{devoured}}">
+        {{!-- Creating a conditional that determines the text to display, based on the burger's devoured status--}}
         {{#unless devoured}} Eat Da Burger! {{else}} Add back to menu? {{/unless}}
     </button>
 
+    {{!-- creating a button with properties pertaining to the burger's id --}}
     <button class="delete-burger btn btn-danger" data-id="{{id}}">Delete burger</button>
 
 </li>

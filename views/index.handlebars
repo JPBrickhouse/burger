@@ -1,29 +1,49 @@
+{{!-- this entire file is html content that will be placed in the body --}}
+
+{{!-- jumbotron for the background image --}}
 <div class="jumbotron jumbotron-fluid">
 
+    {{!-- placing the contents in a bootstrap container --}}
     <div class="container">
 
         <h1 class="display-4 text-center">Eat Da Burger</h1>
 
+        {{!-- input form for users to input / add burgers to the database --}}
+        {{!-- the class "create-form" will be used as a reference point --}}
         <form class="create-form">
             <div class="form-group d-flex justify-content-center">
                 <label for="burg">Burger Name: </label>
+                {{!-- the id "burg" will be used as a reference point --}}
                 <input type="text" id="burg" name="name" placeholder="Input Here">
             </div>
             <div class="d-flex justify-content-center">
+
                 <button type="submit" class="btn btn-dark">Add Burger</button>
             </div>
         </form>
 
         <div class="row">
+            {{!-- creating a column to host the uneaten burgers --}}
             <div class="col-xl-6">
 
                 <h2 class="text-center">Uneaten Burgers</h2>
 
                 <div class="card">
                     <ul class="list-group list-group-flush">
+                        {{!-- this is the place where handlebars will place the content --}}
+
+                        {{!-- going through all of the content in the handlebars object --}}
                         {{#each burgers}}
+
+                        {{!-- unless it's devoured - aka, it HASN'T been eaten - display here --}}
+                        {{!-- therefore, display the uneaten burgers here --}}
                         {{#unless devoured}}
+
+                        {{!-- Partials are normal Handlebars templates that may be called directly by other templates. --}}
+                        {{!-- go into the partials folder and get the burger-block handlebars file and display the content here --}}
                         {{> burgs/burger-block}}
+
+                        {{!-- closing the handlebars --}}
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -31,15 +51,27 @@
 
             </div>
 
+            {{!-- creating a column to host the eaten burgers --}}
             <div class="col-xl-6">
 
                 <h2 class="text-center">Eaten Burgers</h2>
 
                 <div class="card">
                     <ul class="list-group list-group-flush">
+                        {{!-- this is the place where handlebars will place the content --}}
+
+                        {{!-- going through all of the content in the handlebars object --}}
                         {{#each burgers}}
+
+                        {{!-- if it is devoured - aka, it HAS been eaten - display here --}}
+                        {{!-- therefore, display the eaten burgers here --}}
                         {{#if devoured}}
+
+                        {{!-- Partials are normal Handlebars templates that may be called directly by other templates. --}}
+                        {{!-- go into the partials folder and get the burger-block handlebars file and display the content here --}}
                         {{> burgs/burger-block}}
+
+                        {{!-- closing the handlebars --}}
                         {{/if}}
                         {{/each}}
                     </ul>
