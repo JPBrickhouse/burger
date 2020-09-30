@@ -1,7 +1,10 @@
 const { query } = require("express");
+
+// --------------------------------------------------------------------
 // Import MySQL connection
 var connection = require("../config/connection.js");
 
+// --------------------------------------------------------------------
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
@@ -17,6 +20,7 @@ function printQuestionMarks(num) {
     return arr.toString();
 }
 
+// --------------------------------------------------------------------
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
     var arr = [];
@@ -40,11 +44,12 @@ function objToSql(ob) {
     return arr.toString();
 }
 
-
-
+// --------------------------------------------------------------------
 // Object for all the SQL statement functions
 var orm = {
 
+    // orm.selectAll method
+    // Getting everything (all the burgers) from the database
     selectAll: function (tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
@@ -55,8 +60,8 @@ var orm = {
         })
     },
 
-
-
+    // orm.insertOne method
+    // Adding (a burger) to the database
     insertOne: function (tableInput, cols, vals, cb) {
         var queryString = "INSERT INTO " + tableInput;
         queryString += " (";
@@ -77,7 +82,8 @@ var orm = {
         });
     },
 
-
+    // orm.updateOne method
+    // Updating the database (with the burger's devoured status)
     updateOne: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
@@ -96,7 +102,8 @@ var orm = {
         });
     },
 
-
+    // orm.delete method
+    // Deleting (a burger) from the database
     delete: function (tableInput, condition, cb) {
         var queryString = "DELETE FROM " + tableInput;
         queryString += " WHERE ";
@@ -112,7 +119,6 @@ var orm = {
     }
 }
 
-
-
+// --------------------------------------------------------------------
 // Export the orm object for the model (burger.js)
 module.exports = orm;
