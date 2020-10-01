@@ -38,5 +38,5 @@ var burger = {
 }
 
 // --------------------------------------------------------------------
-// Export the database function for use in the controller (burgers_controllers.js)
+// Export the burger model for use in the controller (burgers_controllers.js)
 module.exports = burger;

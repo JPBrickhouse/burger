@@ -1,8 +1,11 @@
 -- Schema for the burgers_db
 
-CREATE DATABASE burgers_db;
-
-USE burgers_db;
+-- ------------------------------------
+-- Comment out these lines while in Heroku
+-- because the database already exists
+-- CREATE DATABASE burgers_db;
+-- USE burgers_db;
+-- ------------------------------------
 
 CREATE TABLE burgers
 (
